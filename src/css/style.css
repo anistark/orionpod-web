@@ -40,7 +40,10 @@ html {
 body {
   background: var(--color-surface);
   color: #e2e8f0;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
   font-family:
+    "Dune Rise",
     "Inter",
     system-ui,
     -apple-system,
