@@ -1,0 +1,10 @@
+---
+permalink: /api/latest.json
+---
+{
+  "version": "{{ latestRelease.version }}",
+  "stable": {{ latestRelease.stable }},
+  "date": "{{ latestRelease.date }}",
+  "notes": "{{ latestRelease.notes }}",
+  "download_url": "{{ latestRelease.assets[0].url }}"
+}
