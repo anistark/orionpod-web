@@ -6,7 +6,7 @@ export default {
   image: "/assets/images/splash.png",
   twitterHandle: "@kranirudha",
   // TODO: Replace Google Drive link with a Dub.co short link for download tracking
-  downloadUrl: "https://drive.google.com/file/d/1nYDi_AlKow1X1omAqACMISZp3eMjyIdS/view?usp=drive_link",
+  downloadUrl: "https://github.com/anistark/orionpod-web/releases/download/v0.2.1-rc1/OrionPod_0.2.1_universal.dmg",
   twitter: "https://x.com/kranirudha",
   mastodon: "https://fosstodon.org/@ani",
   year: new Date().getFullYear(),
