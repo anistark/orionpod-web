@@ -1,0 +1,148 @@
+<section id="faq" class="py-32 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 fade-in">FAQ</h2>
+    <p class="text-gray-500 text-center mb-16 fade-in stagger-1">Common questions & troubleshooting</p>
+
+    <div class="space-y-4">
+
+      <!-- macOS DMG install -->
+      <details class="group glass rounded-2xl fade-in stagger-2">
+        <summary class="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 text-white font-medium select-none">
+          <span class="flex items-center gap-3">
+            <iconify-icon icon="lucide:apple" width="20" class="text-gray-400 shrink-0"></iconify-icon>
+            macOS says OrionPod "can't be opened" — what do I do?
+          </span>
+          <iconify-icon icon="lucide:chevron-down" width="18" class="text-gray-500 transition-transform duration-300 group-open:rotate-180 shrink-0"></iconify-icon>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed space-y-5">
+          <p class="text-gray-300">
+            Because OrionPod isn't signed with an Apple Developer certificate (yet), macOS Gatekeeper blocks it on first launch. This is normal for indie/open-source apps. Here's how to install it:
+          </p>
+
+          <ol class="space-y-4 list-none">
+            <li class="flex gap-3">
+              <span class="text-accent-light font-mono font-semibold shrink-0">1.</span>
+              <div>
+                <strong class="text-white">Open the DMG</strong>: double-click
+                <code class="text-xs bg-white/5 px-1.5 py-0.5 rounded text-accent-light">OrionPod_0.1.5_universal.dmg</code>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent-light font-mono font-semibold shrink-0">2.</span>
+              <div>
+                <strong class="text-white">Drag OrionPod to Applications</strong>: standard DMG install.
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent-light font-mono font-semibold shrink-0">3.</span>
+              <div>
+                <strong class="text-white">First launch will be blocked</strong>: macOS shows:
+                <span class="block mt-1.5 glass-strong rounded-lg px-3 py-2 text-xs text-gray-300 italic">
+                  "OrionPod can't be opened because Apple cannot check it for malicious software."
+                </span>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent-light font-mono font-semibold shrink-0">4.</span>
+              <div>
+                <strong class="text-white">Open it anyway</strong>: pick one of these:
+
+                <div class="mt-3 space-y-3">
+                  <div class="glass-strong rounded-xl p-4">
+                    <p class="text-white text-xs font-semibold mb-2 flex items-center gap-2">
+                      <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">OPTION A</span>
+                      Easiest
+                    </p>
+                    <ul class="space-y-1 text-xs text-gray-400">
+                      <li>→ Right-click (or Control-click) <strong class="text-gray-300">OrionPod.app</strong> → click <strong class="text-gray-300">Open</strong></li>
+                      <li>→ Click <strong class="text-gray-300">Open</strong> in the dialog that appears</li>
+                      <li>→ Only needed once — future launches work normally</li>
+                    </ul>
+                  </div>
+
+                  <div class="glass-strong rounded-xl p-4">
+                    <p class="text-white text-xs font-semibold mb-2 flex items-center gap-2">
+                      <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-mono">OPTION B</span>
+                      If Option A doesn't work
+                    </p>
+                    <ul class="space-y-1 text-xs text-gray-400">
+                      <li>→ Go to <strong class="text-gray-300">System Settings → Privacy & Security</strong></li>
+                      <li>→ Scroll to the <strong class="text-gray-300">Security</strong> section</li>
+                      <li>→ You'll see: <em>"OrionPod was blocked from use because it is not from an identified developer"</em></li>
+                      <li>→ Click <strong class="text-gray-300">Open Anyway</strong></li>
+                      <li>→ Enter your password</li>
+                      <li>→ Click <strong class="text-gray-300">Open</strong> in the final confirmation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent-light font-mono font-semibold shrink-0">5.</span>
+              <div>
+                <strong class="text-white">Done!</strong>: OrionPod launches and works normally from now on. 🎉
+              </div>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <!-- What models work? -->
+      <details class="group glass rounded-2xl fade-in stagger-3">
+        <summary class="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 text-white font-medium select-none">
+          <span class="flex items-center gap-3">
+            <iconify-icon icon="lucide:brain-circuit" width="20" class="text-gray-400 shrink-0"></iconify-icon>
+            What models can I run?
+          </span>
+          <iconify-icon icon="lucide:chevron-down" width="18" class="text-gray-500 transition-transform duration-300 group-open:rotate-180 shrink-0"></iconify-icon>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+          <p>OrionPod supports <strong class="text-white">GGUF-format models</strong>. You can browse and download them directly from HuggingFace inside the app. Popular models like Mistral, DeepSeek, Qwen, Kimi, Llama, and Gemma all work. The app automatically filters out models that won't run on your hardware.</p>
+        </div>
+      </details>
+
+      <!-- Is it really private? -->
+      <details class="group glass rounded-2xl fade-in stagger-4">
+        <summary class="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 text-white font-medium select-none">
+          <span class="flex items-center gap-3">
+            <iconify-icon icon="lucide:shield-check" width="20" class="text-gray-400 shrink-0"></iconify-icon>
+            Is it really 100% private?
+          </span>
+          <iconify-icon icon="lucide:chevron-down" width="18" class="text-gray-500 transition-transform duration-300 group-open:rotate-180 shrink-0"></iconify-icon>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+          <p>Yes. OrionPod runs entirely on your machine. There's no telemetry, no analytics, no cloud calls, no API keys. Your prompts and model outputs never leave your device. Read our <a href="/privacy/" class="text-accent-light hover:underline">privacy policy</a>, it's short, because there's nothing to collect.</p>
+        </div>
+      </details>
+
+      <!-- What hardware do I need? -->
+      <details class="group glass rounded-2xl fade-in stagger-5">
+        <summary class="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 text-white font-medium select-none">
+          <span class="flex items-center gap-3">
+            <iconify-icon icon="lucide:cpu" width="20" class="text-gray-400 shrink-0"></iconify-icon>
+            What hardware do I need?
+          </span>
+          <iconify-icon icon="lucide:chevron-down" width="18" class="text-gray-500 transition-transform duration-300 group-open:rotate-180 shrink-0"></iconify-icon>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+          <p>macOS 10.15 (Catalina) or later. Apple Silicon (M1/M2/M3/M4) is recommended for Metal GPU acceleration, but Intel Macs work too. For 7B models, 8 GB of RAM is a comfortable minimum; larger models need more.</p>
+        </div>
+      </details>
+
+      <!-- Is it free? -->
+      <details class="group glass rounded-2xl fade-in stagger-6">
+        <summary class="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 text-white font-medium select-none">
+          <span class="flex items-center gap-3">
+            <iconify-icon icon="lucide:heart" width="20" class="text-gray-400 shrink-0"></iconify-icon>
+            Is OrionPod free?
+          </span>
+          <iconify-icon icon="lucide:chevron-down" width="18" class="text-gray-500 transition-transform duration-300 group-open:rotate-180 shrink-0"></iconify-icon>
+        </summary>
+        <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+          <p>Yes, OrionPod is free and open source. It's an individual project built with love. No subscriptions, no paywalls, no premium tiers.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>

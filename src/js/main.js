@@ -1,0 +1,36 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+  );
+
+  document
+    .querySelectorAll(".fade-in, .fade-in-left, .fade-in-right")
+    .forEach((el) => observer.observe(el));
+
+  // Screenshot carousel
+  const track = document.querySelector(".carousel-track");
+  if (!track) return;
+
+  let scrollPos = 0;
+  const speed = 0.5;
+  let paused = false;
+
+  track.addEventListener("mouseenter", () => (paused = true));
+  track.addEventListener("mouseleave", () => (paused = false));
+
+  function animate() {
+    if (!paused) {
+      scrollPos += speed;
+      if (scrollPos >= track.scrollWidth / 2) scrollPos = 0;
+      track.style.transform = `translateX(-${scrollPos}px)`;
+    }
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});

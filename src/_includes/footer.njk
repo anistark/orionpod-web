@@ -1,0 +1,18 @@
+<footer class="py-12 px-6 border-t border-glass-border">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <img src="/assets/logo.png" alt="OrionPod" class="w-6 h-6 rounded" />
+      <span class="text-sm text-gray-500">© {{ site.year }} Kumar Anirudha. All rights reserved.</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="/privacy/" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy</a>
+      <a href="/terms/" class="text-sm text-gray-500 hover:text-white transition-colors">Terms</a>
+      <a href="{{ site.twitter }}" target="_blank" rel="noopener" class="text-gray-500 hover:text-white transition-colors" aria-label="Twitter">
+        <iconify-icon icon="simple-icons:x" width="16"></iconify-icon>
+      </a>
+      <a href="{{ site.mastodon }}" target="_blank" rel="noopener me" class="text-gray-500 hover:text-white transition-colors" aria-label="Mastodon">
+        <iconify-icon icon="simple-icons:mastodon" width="16"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</footer>

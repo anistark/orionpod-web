@@ -1,0 +1,57 @@
+---
+layout: base.njk
+title: Privacy Policy — OrionPod
+---
+
+{% include "nav.njk" %}
+
+<main class="pt-32 pb-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-2">Privacy Policy</h1>
+    <p class="text-sm text-gray-500 mb-10">Last updated: March 2026</p>
+
+    <div class="space-y-8 text-gray-300 leading-relaxed">
+
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-3">TL;DR</h2>
+        <p class="glass-strong rounded-xl p-5 text-accent-light">
+          OrionPod runs <strong>entirely on your machine</strong>. We don't collect, store, transmit, or even peek at your data. There are no analytics, no telemetry, no tracking pixels, no cookies — nothing. Your prompts, your models, your conversations — they all stay on your device.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-3">What Data We Collect</h2>
+        <p><strong class="text-white">None.</strong> Zero. Zilch.</p>
+        <p class="mt-2">OrionPod is a local-first desktop application. All AI inference happens on your hardware. No data is sent to any external server, cloud service, or third party. We have no servers receiving your data because there's nothing to receive.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-3">Local Storage</h2>
+        <p>OrionPod stores configuration files and downloaded models locally on your device. This data never leaves your machine. You have full control over it and can delete it at any time.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-3">Third-Party Services</h2>
+        <p>OrionPod itself does not connect to any third-party services during normal operation. If you choose to download models from external sources (e.g., Hugging Face), those downloads are initiated by you and subject to those platforms' own privacy policies.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-3">This Website</h2>
+        <p>This website (<code class="text-accent-light text-sm">orionpod.anirudha.dev</code>) is a static site hosted on GitHub Pages. We don't use cookies, analytics, or tracking scripts. GitHub Pages may collect basic server logs as part of their hosting — see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" class="text-accent-light hover:underline">GitHub's privacy statement</a> for details.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-3">Changes</h2>
+        <p>If this policy ever changes (unlikely, given we collect nothing), we'll update this page. But honestly, "we collect nothing" is a pretty stable policy.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-white mb-3">Contact</h2>
+        <p>Questions? Reach out on <a href="{{ site.twitter }}" target="_blank" rel="noopener" class="text-accent-light hover:underline">X (Twitter)</a> or <a href="{{ site.mastodon }}" target="_blank" rel="noopener me" class="text-accent-light hover:underline">Mastodon</a>.</p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+{% include "footer.njk" %}
