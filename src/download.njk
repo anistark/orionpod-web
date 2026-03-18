@@ -38,7 +38,7 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
             <div class="flex items-center gap-3 flex-wrap">
               <h2 class="text-xl md:text-2xl font-bold">v{{ release.version }}</h2>
               {% if release.codename %}
-                <span class="text-xs text-gray-500 font-mono">{{ release.codename }}</span>
+                <span class="text-xs text-cyan-400 font-mono">{{ release.codename }}</span>
               {% endif %}
               {% if release.latest %}
                 <span class="text-[0.6rem] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-accent/20 text-accent-light border border-accent/30">Latest</span>
@@ -50,7 +50,7 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
                 <span class="text-[0.6rem] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-400 border border-red-500/25">Deprecated</span>
               {% endif %}
             </div>
-            <span class="text-xs text-gray-500">{{ release.date }}</span>
+            <span class="text-xs text-cyan-400">{{ release.date }}</span>
           </div>
 
           {# Notes #}
@@ -111,7 +111,7 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
                           <iconify-icon icon="lucide:minus-circle" width="14"></iconify-icon> Removed
                         </h4>
                       {% elif group.type == "for geeks" %}
-                        <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 flex items-center gap-1.5">
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-2 flex items-center gap-1.5">
                           <iconify-icon icon="lucide:cpu" width="14"></iconify-icon> For Geeks
                         </h4>
                       {% elif group.type == "security" %}
