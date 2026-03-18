@@ -1,0 +1,74 @@
+# OrionPod
+
+> A lightweight desktop runtime for running AI models locally. No cloud. No heavy infra. Just your machine.
+
+OrionPod is a free, open-source macOS application that lets you run large language models (LLMs) entirely on your local machine. It is built with Rust and Metal for maximum performance and minimal resource usage. Your data never leaves your device.
+
+## Key Facts
+
+- **Website**: https://orionpod.com
+- **Platform**: macOS 10.15 (Catalina) or later
+- **App Size**: ~30 MB (17x smaller than LM Studio)
+- **Built With**: Rust + Metal (native GPU acceleration)
+- **Price**: Free and open source
+- **Privacy**: 100% local — no telemetry, no analytics, no cloud calls, no API keys
+- **Creator**: Anirudha (Ani) — https://x.com/kranirudha
+
+## Features
+
+### Run AI Models Locally
+OrionPod runs GGUF-format models directly on your hardware with no internet connection required. It supports models from Mistral, DeepSeek, Qwen, Kimi, Llama, Gemma, and many more.
+
+### Built-in HuggingFace Integration
+Browse, search, and download GGUF models from HuggingFace directly inside the app. OrionPod automatically filters out models that aren't compatible with your system, so you only see what actually runs on your hardware.
+
+### GPU Accelerated
+Auto-detects Metal on Apple Silicon (M1/M2/M3/M4) and CUDA on NVIDIA for native GPU inference. Delivers fast token generation speeds.
+
+### Completely Private
+100% local execution. No cloud dependencies, no telemetry, no analytics, no API keys required. Your prompts and model outputs never leave your device.
+
+### Lightweight and Fast
+~30 MB app size. Starts in under 2 seconds. Uses less than 50 MB RAM when idle. No Electron shell, no Python runtime — just native Rust + Metal.
+
+### Real-time Observability
+Monitor tokens per second, memory usage, latency, and GPU utilization as your model runs. Live metrics help you optimize performance and choose the right model for your hardware.
+
+## System Requirements
+
+- macOS 10.15 (Catalina) or later
+- Apple Silicon (M1/M2/M3/M4) recommended for Metal GPU acceleration
+- Intel Macs also supported
+- 8 GB RAM minimum for 7B parameter models; larger models need more
+
+## Supported Models
+
+OrionPod supports any GGUF-format model. Popular tested models include:
+
+| Model | Size (Q4_K_M) | Status |
+|-------|---------------|--------|
+| Mistral-7B | 4.1 GB | Compatible |
+| Qwen-2.5-7B | 4.7 GB | Compatible |
+| Kimi-VL-A3B | 2.0 GB | Compatible |
+| DeepSeek-R1-14B | 8.5 GB | Risky (needs more RAM) |
+| Gemma-3-12B | 7.3 GB | Risky (needs more RAM) |
+| Llama-3.3-70B | 42 GB | Not Compatible (too large for most hardware) |
+
+## How to Install
+
+1. Download the DMG from the website
+2. Open the DMG and drag OrionPod to Applications
+3. On first launch, macOS may block it (it's not yet signed with an Apple Developer certificate)
+4. Right-click OrionPod.app → click Open → click Open in the dialog (only needed once)
+5. Alternatively: System Settings → Privacy & Security → Open Anyway
+
+## Links
+
+- Homepage: https://orionpod.com
+- Download: https://orionpod.com/#download
+- Features: https://orionpod.com/#features
+- FAQ: https://orionpod.com/#faq
+- Privacy Policy: https://orionpod.com/privacy/
+- Terms of Use: https://orionpod.com/terms/
+- Twitter/X: https://x.com/kranirudha
+- Mastodon: https://fosstodon.org/@ani

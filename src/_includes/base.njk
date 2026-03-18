@@ -4,7 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title or site.title }}</title>
-    <meta name="description" content="{{ site.description }}" />
+
+    {%- set pageTitle = title or site.title -%}
+    {%- set pageDescription = description or site.description -%}
+    {%- set pageUrl = site.url + (page.url or "/") -%}
+    {%- set pageImage = site.url + (image or site.image) -%}
+
+    <!-- SEO -->
+    <meta name="description" content="{{ pageDescription }}" />
+    <meta name="keywords" content="OrionPod, local AI, run AI locally, GGUF, LLM, desktop AI, private AI, offline AI, macOS AI, Apple Silicon, Metal GPU, Rust, lightweight AI runtime, Mistral, DeepSeek, Qwen, Llama, Gemma, HuggingFace" />
+    <meta name="author" content="Anirudha (Ani)" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#7c3aed" />
+    <link rel="canonical" href="{{ pageUrl }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ pageUrl }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageDescription }}" />
+    <meta property="og:image" content="{{ pageImage }}" />
+    <meta property="og:image:width" content="3840" />
+    <meta property="og:image:height" content="2160" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ pageUrl }}" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
+    <meta name="twitter:description" content="{{ pageDescription }}" />
+    <meta name="twitter:image" content="{{ pageImage }}" />
+    <meta name="twitter:creator" content="{{ site.twitterHandle }}" />
+
     <link rel="icon" href="/assets/logo.png" type="image/png" />
     <link rel="preload" href="/assets/fonts/Dune_Rise.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +43,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2/dist/iconify-icon.min.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "OrionPod",
+          "url": "{{ site.url }}",
+          "description": "{{ site.description }}",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "macOS 10.15+",
+          "softwareVersion": "0.1.5",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "image": "{{ site.url }}{{ site.image }}",
+          "screenshot": "{{ site.url }}{{ site.image }}",
+          "author": {
+            "@type": "Person",
+            "name": "Anirudha",
+            "url": "https://x.com/kranirudha"
+          },
+          "downloadUrl": "{{ site.downloadUrl }}",
+          "featureList": [
+            "Run AI models locally without cloud dependencies",
+            "100% private — no telemetry, no analytics, no API keys",
+            "GPU accelerated via Metal (Apple Silicon) and CUDA (NVIDIA)",
+            "Built-in HuggingFace model browser with hardware compatibility filtering",
+            "Supports GGUF-format models including Mistral, DeepSeek, Qwen, Kimi, Llama, Gemma",
+            "Real-time observability: tokens/s, memory, latency, GPU usage",
+            "Lightweight ~30 MB app built with Rust and Metal — 17x smaller than LM Studio",
+            "Starts in under 2 seconds, uses less than 50 MB RAM idle"
+          ],
+          "softwareRequirements": "macOS 10.15 (Catalina) or later. Apple Silicon (M1/M2/M3/M4) recommended. 8 GB RAM minimum for 7B models.",
+          "programmingLanguage": "Rust"
+        },
+        {
+          "@type": "WebSite",
+          "url": "{{ site.url }}",
+          "name": "OrionPod",
+          "description": "{{ site.description }}"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What models can I run with OrionPod?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "OrionPod supports GGUF-format models. You can browse and download them directly from HuggingFace inside the app. Popular models like Mistral, DeepSeek, Qwen, Kimi, Llama, and Gemma all work. The app automatically filters out models that won't run on your hardware."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is OrionPod really 100% private?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. OrionPod runs entirely on your machine. There's no telemetry, no analytics, no cloud calls, no API keys. Your prompts and model outputs never leave your device."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What hardware do I need for OrionPod?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "macOS 10.15 (Catalina) or later. Apple Silicon (M1/M2/M3/M4) is recommended for Metal GPU acceleration, but Intel Macs work too. For 7B models, 8 GB of RAM is a comfortable minimum; larger models need more."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is OrionPod free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, OrionPod is free and open source. No subscriptions, no paywalls, no premium tiers."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="gradient-bg min-h-screen antialiased">
     {{ content | safe }}
