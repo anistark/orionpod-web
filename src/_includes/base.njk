@@ -65,7 +65,7 @@
           "description": "{{ site.description }}",
           "applicationCategory": "DeveloperApplication",
           "operatingSystem": "macOS 10.15+",
-          "softwareVersion": "0.1.5",
+          "softwareVersion": "{{ latestRelease.version }}",
           "offers": {
             "@type": "Offer",
             "price": "0",
@@ -78,7 +78,7 @@
             "name": "Anirudha",
             "url": "https://x.com/kranirudha"
           },
-          "downloadUrl": "{{ site.downloadUrl }}",
+          "downloadUrl": "{{ latestRelease.assets[0].url }}",
           "featureList": [
             "Run AI models locally without cloud dependencies",
             "100% private — no telemetry, no analytics, no API keys",
