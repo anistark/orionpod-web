@@ -94,9 +94,9 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
                 <div class="mt-4 space-y-5">
                   {%- for group in release.changelog -%}
                     <div>
-                      {% if group.type == "added" %}
+                      {% if group.type == "changes" %}
                         <h4 class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2 flex items-center gap-1.5">
-                          <iconify-icon icon="lucide:plus-circle" width="14"></iconify-icon> Added
+                          <iconify-icon icon="lucide:plus-circle" width="14"></iconify-icon> Changes
                         </h4>
                       {% elif group.type == "changed" %}
                         <h4 class="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2 flex items-center gap-1.5">
@@ -110,9 +110,9 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
                         <h4 class="text-xs font-semibold uppercase tracking-wider text-red-400 mb-2 flex items-center gap-1.5">
                           <iconify-icon icon="lucide:minus-circle" width="14"></iconify-icon> Removed
                         </h4>
-                      {% elif group.type == "technical" %}
+                      {% elif group.type == "for geeks" %}
                         <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 flex items-center gap-1.5">
-                          <iconify-icon icon="lucide:cpu" width="14"></iconify-icon> Technical
+                          <iconify-icon icon="lucide:cpu" width="14"></iconify-icon> For Geeks
                         </h4>
                       {% elif group.type == "security" %}
                         <h4 class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-2 flex items-center gap-1.5">
