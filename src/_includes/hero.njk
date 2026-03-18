@@ -24,7 +24,8 @@
 
     <div class="flex items-center justify-center gap-4 fade-in stagger-4">
       <a href="{{ site.downloadUrl }}"
-        class="px-8 py-3 bg-accent hover:bg-accent-light text-white font-medium rounded-full transition-all hover:scale-105 glow">
+        class="px-8 py-3 bg-accent hover:bg-accent-light text-white font-medium rounded-full transition-all hover:scale-105 glow"
+        onclick="gtag('event', 'download_dmg', { event_category: 'download', event_label: 'DMG_hero' });">
         Download for macOS
       </a>
     </div>
