@@ -6,26 +6,26 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
 
 {% include "nav.njk" %}
 
-<main class="pt-32 pb-20 px-6 lg:px-16 xl:px-28 2xl:px-40">
-  <div class="w-full">
-    <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">Download OrionPod</h1>
+<main class="pt-32 pb-20 px-4 sm:px-6 lg:px-16 xl:px-28 2xl:px-40 overflow-x-hidden">
+  <div class="w-full max-w-4xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 fade-in">Download OrionPod</h1>
     <p class="text-gray-500 text-center mb-6 fade-in stagger-1">Currently available for macOS</p>
 
     {# OS tabs #}
-    <div class="flex justify-center gap-3 mb-16 fade-in stagger-2">
-      <button class="os-tab active inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all" data-os="macos">
+    <div class="flex flex-wrap justify-center gap-3 mb-16 fade-in stagger-2">
+      <button class="os-tab active inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all" data-os="macos">
         <iconify-icon icon="simple-icons:apple" width="18"></iconify-icon>
         macOS
       </button>
-      <button class="os-tab inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all opacity-40 cursor-not-allowed" data-os="windows" disabled>
+      <button class="os-tab inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all opacity-40 cursor-not-allowed" data-os="windows" disabled>
         <iconify-icon icon="simple-icons:windows" width="16"></iconify-icon>
         Windows
-        <span class="text-[0.6rem] uppercase tracking-wider opacity-70">Soon</span>
+        <span class="text-[0.6rem] uppercase tracking-wider opacity-70 hidden sm:inline">Soon</span>
       </button>
-      <button class="os-tab inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all opacity-40 cursor-not-allowed" data-os="linux" disabled>
+      <button class="os-tab inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all opacity-40 cursor-not-allowed" data-os="linux" disabled>
         <iconify-icon icon="simple-icons:linux" width="16"></iconify-icon>
         Linux
-        <span class="text-[0.6rem] uppercase tracking-wider opacity-70">Soon</span>
+        <span class="text-[0.6rem] uppercase tracking-wider opacity-70 hidden sm:inline">Soon</span>
       </button>
     </div>
 
@@ -73,10 +73,10 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
                     </div>
                   </div>
                   <a href="{{ asset.url }}"
-                     class="inline-flex items-center gap-2 px-5 py-2 bg-accent hover:bg-accent-light text-white text-sm font-medium rounded-full transition-all hover:scale-105 glow {% if release.deprecated %}pointer-events-none opacity-50{% endif %}"
+                     class="inline-flex items-center justify-center gap-2 px-5 py-2 bg-accent hover:bg-accent-light text-white text-sm font-medium rounded-full transition-all hover:scale-105 glow w-full sm:w-auto truncate {% if release.deprecated %}pointer-events-none opacity-50{% endif %}"
                      onclick="gtag('event', 'download', { event_category: 'download', event_label: '{{ asset.filename }}', value: '{{ release.version }}' });">
-                    <iconify-icon icon="lucide:download" width="16"></iconify-icon>
-                    {{ asset.filename }}
+                    <iconify-icon icon="lucide:download" width="16" class="shrink-0"></iconify-icon>
+                    <span class="truncate">{{ asset.filename }}</span>
                   </a>
                 </div>
               {%- endfor -%}
