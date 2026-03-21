@@ -7,5 +7,6 @@ export default {
   twitterHandle: "@kranirudha",
   twitter: "https://x.com/kranirudha",
   mastodon: "https://fosstodon.org/@ani",
+  discord: "https://discord.gg/qnnEwNp7te",
   year: new Date().getFullYear(),
 };
