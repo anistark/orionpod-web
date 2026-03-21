@@ -12,7 +12,7 @@ OrionPod is a free, open-source macOS application that lets you run large langua
 - **Built With**: Rust + Metal (native GPU acceleration)
 - **Price**: Free and open source
 - **Privacy**: 100% local — no telemetry, no analytics, no cloud calls, no API keys
-- **Creator**: Anirudha (Ani) — https://x.com/kranirudha
+- **Creator**: Anirudha (Ani) — https://x.com/orion_pod
 
 ## Features
 
@@ -70,5 +70,5 @@ OrionPod supports any GGUF-format model. Popular tested models include:
 - FAQ: https://orionpod.com/#faq
 - Privacy Policy: https://orionpod.com/privacy/
 - Terms of Use: https://orionpod.com/terms/
-- Twitter/X: https://x.com/kranirudha
+- Twitter/X: https://x.com/orion_pod
 - Mastodon: https://fosstodon.org/@ani
