@@ -140,6 +140,13 @@
     </script>
   </head>
   <body class="gradient-bg min-h-screen antialiased">
+    <!-- Video background — loops, muted, no controls -->
+    <video class="video-bg" autoplay loop muted playsinline poster="/assets/background.webp">
+      <source src="/assets/background.webm" type="video/webm" />
+      <source src="/assets/background.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay"></div>
+
     {{ content | safe }}
     <script src="/js/main.js"></script>
   </body>

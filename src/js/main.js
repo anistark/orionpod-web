@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Video background: detect playback and swap out the static image fallback
+  const videoBg = document.querySelector(".video-bg");
+  if (videoBg) {
+    videoBg.addEventListener("playing", () => {
+      document.body.classList.add("video-playing");
+    });
+    // If the video fails or isn't supported, the poster + CSS image fallback remain
+  }
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
