@@ -154,7 +154,7 @@ export default [
     date: "2026-03-18",
     latest: false,
     stable: false,
-    deprecated: false,
+    deprecated: true,
     notes: "First public release. Metal GPU acceleration, HuggingFace model browser, real-time observability.",
     changelog: [
       {
