@@ -1,9 +1,55 @@
 export default [
   {
+    version: "0.3.0-alpha",
+    codename: "Daru",
+    date: "2026-03-24",
+    latest: true,
+    stable: false,
+    deprecated: false,
+    notes: "Hello World orion-core, an inbuilt harness",
+    changelog: [
+      {
+        type: "changes",
+        items: [
+          "Structured agent event system — chat now receives rich lifecycle events (start, delta, end, error, warning) instead of raw token strings",
+          "Token budget bar in chat toolbar — shows context window usage (e.g. \"1,200 / 4,096 tokens\") with visual warning when >80% full",
+          "Discord community link added to About modal",
+          "System prompt support — backend accepts custom system prompts via `set_system_prompt` command",
+          "Inference parameter tuning — `set_inference_params` command for runtime temperature, context size, and thread count updates",
+        ],
+      },
+      {
+        type: "for geeks",
+        items: [
+          "`orion-core` integration: `LlamaCppBackend` implements `LlmBackend` trait, wrapping `InferenceEngine` for backend-agnostic agent loop",
+          "`AgentState` replaces `InferenceState` — all inference commands route through `orion_core::Agent` for conversation state, context pruning, and ChatML prompt formatting",
+          "`agent-event` Tauri event channel replaces `token-stream` — emits all 13 `AgentEvent` variants (`agent_start`, `message_delta`, `message_end`, `context_budget`, `error`, etc.)",
+          "`set_system_prompt` and `set_inference_params` IPC commands",
+          "`InferenceParams` extended with `n_threads` field (defaults to `available_parallelism - 2`)",
+          "Removed `inference/streaming.rs` (`TokenEvent`, `ChatMessage`, `format_chatml` superseded by orion-core types)",
+          "Removed dead `format_prompt` and `truncate_to_fit` from `InferenceEngine` (context pipeline now in orion-core)",
+          "Frontend: `AgentEvent` discriminated union type (13 variants), `AgentMessage`, `ToolCall`, `ToolResultData` types added to `lib/types.ts`",
+          "Frontend: `setSystemPrompt()` and `setInferenceParams()` IPC wrappers in `lib/tauri.ts`",
+          "Frontend: `ChatWindow.tsx` migrated from `token-stream` listener to `agent-event` with full event handling",
+          "Zero compiler warnings (Rust), zero TypeScript errors",
+        ],
+      },
+    ],
+    assets: [
+      {
+        os: "macOS",
+        arch: "Universal (Apple Silicon + Intel)",
+        filename: "OrionPod_0.3.0_universal.dmg",
+        url: "https://github.com/anistark/orionpod-web/releases/download/v0.3.0-alpha/OrionPod_0.3.0_universal.dmg",
+        size: "~24 MB",
+      },
+    ],
+  },
+  {
     version: "0.2.3-beta",
     codename: "Faye",
     date: "2026-03-21",
-    latest: true,
+    latest: false,
     stable: false,
     deprecated: false,
     notes: "Suggested Models and Onboarding",
