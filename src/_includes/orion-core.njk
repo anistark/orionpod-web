@@ -1,0 +1,87 @@
+<section id="orion-core" class="py-32 px-6 lg:px-16 xl:px-28 2xl:px-40">
+  <div class="w-full max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 text-[11px] font-mono px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent-light fade-in">
+        <iconify-icon icon="lucide:git-fork" width="12"></iconify-icon> Open Source
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-5 mb-4 fade-in stagger-1">Built on an open core</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto fade-in stagger-2">
+        The agent engine inside OrionPod is now its own project.
+        <span class="text-white font-semibold">orion-core</span> is a backend-agnostic
+        agent harness for local LLMs — free, MIT-licensed, and published to crates.io
+        so anyone can build on it.
+      </p>
+    </div>
+
+    <div class="glass rounded-2xl border border-glass-border p-8 md:p-10 fade-in stagger-3">
+      <div class="flex flex-col md:flex-row md:items-start gap-10">
+
+        {# Identity + install #}
+        <div class="md:w-1/2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl border border-accent/30 bg-accent/5 flex items-center justify-center shrink-0">
+              <iconify-icon icon="lucide:bot" width="24" class="text-accent"></iconify-icon>
+            </div>
+            <div>
+              <div class="text-lg font-semibold">orion-core</div>
+              <div class="flex items-center gap-2 text-[10px] font-mono text-gray-500 mt-0.5">
+                <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">MIT</span>
+                <span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">Rust 1.85+</span>
+                <span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10">Backend-agnostic</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">
+            Bring your own model runtime — llama.cpp, MLX, a cloud API, anything — and
+            orion-core handles everything above it: the conversation loop, context
+            management and token budgets, streaming events, chat templates, and an
+            automatic tool-execution loop.
+          </p>
+          <div class="glass-strong rounded-lg px-4 py-3 font-mono text-xs text-gray-300 flex items-center justify-between gap-3">
+            <span><span class="text-accent-light">$</span> cargo add orion-core</span>
+            <iconify-icon icon="lucide:terminal" width="14" class="text-gray-600"></iconify-icon>
+          </div>
+        </div>
+
+        {# Capabilities + links #}
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
+              <iconify-icon icon="lucide:plug" width="15" class="text-accent shrink-0"></iconify-icon> Pluggable backends
+            </div>
+            <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
+              <iconify-icon icon="lucide:layers" width="15" class="text-accent shrink-0"></iconify-icon> Context management
+            </div>
+            <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
+              <iconify-icon icon="lucide:radio" width="15" class="text-accent shrink-0"></iconify-icon> Streaming events
+            </div>
+            <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
+              <iconify-icon icon="lucide:message-square-code" width="15" class="text-accent shrink-0"></iconify-icon> Chat templates
+            </div>
+            <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
+              <iconify-icon icon="lucide:wrench" width="15" class="text-accent shrink-0"></iconify-icon> Tool calling
+            </div>
+            <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
+              <iconify-icon icon="lucide:pin" width="15" class="text-accent shrink-0"></iconify-icon> Pin &amp; summarize
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://github.com/anistark/orion-core" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 text-sm px-5 py-2 bg-accent/20 border border-accent/30 text-accent-light hover:bg-accent/30 hover:border-accent/50 rounded-full transition-all hover:scale-105">
+              <iconify-icon icon="simple-icons:github" width="15"></iconify-icon> GitHub
+            </a>
+            <a href="https://crates.io/crates/orion-core" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 text-sm px-5 py-2 glass border border-glass-border text-gray-300 hover:text-white hover:border-white/30 rounded-full transition-all hover:scale-105">
+              <iconify-icon icon="simple-icons:rust" width="15"></iconify-icon> crates.io
+            </a>
+            <a href="https://docs.rs/orion-core" target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 text-sm px-5 py-2 glass border border-glass-border text-gray-300 hover:text-white hover:border-white/30 rounded-full transition-all hover:scale-105">
+              <iconify-icon icon="lucide:book-open" width="15"></iconify-icon> Docs
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
