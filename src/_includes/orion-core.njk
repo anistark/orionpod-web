@@ -7,9 +7,8 @@
       <h2 class="text-3xl md:text-4xl font-bold mt-5 mb-4 fade-in stagger-1">Built on an open core</h2>
       <p class="text-gray-400 max-w-2xl mx-auto fade-in stagger-2">
         The agent engine inside OrionPod is now its own project.
-        <span class="text-white font-semibold">orion-core</span> is a backend-agnostic
-        agent harness for local LLMs — free, MIT-licensed, and published to crates.io
-        so anyone can build on it.
+        <span class="text-white font-semibold">Orion Agent Harness</span> is a backend-agnostic
+        agent harness for local LLMs so anyone can build on it.
       </p>
     </div>
 
@@ -44,25 +43,31 @@
         </div>
 
         {# Capabilities + links #}
-        <div class="md:w-1/2">
-          <div class="grid grid-cols-2 gap-3 mb-6">
+        <div class="md:w-1/2 @container">
+          <div class="grid grid-cols-1 @md:grid-cols-2 gap-3 mb-6">
             <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
-              <iconify-icon icon="lucide:plug" width="15" class="text-accent shrink-0"></iconify-icon> Pluggable backends
+              <iconify-icon icon="lucide:plug" width="15" class="text-accent shrink-0"></iconify-icon>
+              <span class="min-w-0 break-words leading-tight">Pluggable backends</span>
             </div>
             <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
-              <iconify-icon icon="lucide:layers" width="15" class="text-accent shrink-0"></iconify-icon> Context management
+              <iconify-icon icon="lucide:layers" width="15" class="text-accent shrink-0"></iconify-icon>
+              <span class="min-w-0 break-words leading-tight">Context management</span>
             </div>
             <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
-              <iconify-icon icon="lucide:radio" width="15" class="text-accent shrink-0"></iconify-icon> Streaming events
+              <iconify-icon icon="lucide:radio" width="15" class="text-accent shrink-0"></iconify-icon>
+              <span class="min-w-0 break-words leading-tight">Streaming events</span>
             </div>
             <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
-              <iconify-icon icon="lucide:message-square-code" width="15" class="text-accent shrink-0"></iconify-icon> Chat templates
+              <iconify-icon icon="lucide:message-square-code" width="15" class="text-accent shrink-0"></iconify-icon>
+              <span class="min-w-0 break-words leading-tight">Chat templates</span>
             </div>
             <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
-              <iconify-icon icon="lucide:wrench" width="15" class="text-accent shrink-0"></iconify-icon> Tool calling
+              <iconify-icon icon="lucide:wrench" width="15" class="text-accent shrink-0"></iconify-icon>
+              <span class="min-w-0 break-words leading-tight">Tool calling</span>
             </div>
             <div class="glass rounded-lg px-3 py-2.5 flex items-center gap-2.5 text-xs text-gray-300">
-              <iconify-icon icon="lucide:pin" width="15" class="text-accent shrink-0"></iconify-icon> Pin &amp; summarize
+              <iconify-icon icon="lucide:pin" width="15" class="text-accent shrink-0"></iconify-icon>
+              <span class="min-w-0 break-words leading-tight">Pin &amp; summarize</span>
             </div>
           </div>
           <div class="flex flex-wrap gap-3">
