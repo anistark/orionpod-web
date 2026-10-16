@@ -1,9 +1,47 @@
 export default [
   {
+    version: "0.5.1",
+    codename: "Chihiro",
+    date: "2026-10-16",
+    latest: true,
+    stable: true,
+    deprecated: false,
+    notes: "orion-core 0.8, a llama.cpp update, and cleaner streaming of emoji and multi-byte text.",
+    changelog: [
+      {
+        type: "changes",
+        items: [
+          "Fixed garbled characters (`�`) in streamed replies when an emoji or other multi-byte character was split across tokens. The end-of-turn check ran each token through the streaming UTF-8 decoder before the output did, so the decoder saw those bytes twice",
+        ],
+      },
+      {
+        type: "for geeks",
+        items: [
+          "`orion-core` bumped **0.5 → 0.8**. Built-in tools move to the new `Tool::execute(args, ctx: &ToolContext)` signature and build their output with `ToolOutput::new(..).with_details(..)`. `ToolResultData` and the `AgentEvent` TS union now mirror the new `pending` flag and the `tool_denied` / `tool_resolved` / `paused` / `nested` events",
+          "`llama-cpp-2` 0.1.138 → 0.1.160: tokenization, EOS lookup, and token-to-piece decoding move from `LlamaModel` to `LlamaVocab` (`model.vocab()`), since `str_to_token` / `token_eos` / `token_to_piece` and `AddBos` were removed upstream",
+          "Rust deps updated to latest: `reqwest` 0.13 (now with the `query` feature, needed for `RequestBuilder::query`; rustls is the default TLS backend), `sysinfo` 0.39, `dirs` 7, `window-vibrancy` 0.8, Tauri 2.12 and plugins, plus a full `cargo update`",
+          "Frontend deps updated to latest: Vite 8, `@vitejs/plugin-react` 6, ESLint 10 / `@eslint/js` 10, `lucide-react` 1.x, React 19.3, Tauri JS API 2.12 and plugins, Tailwind 4.3, Prettier 3.9, `globals` 17, `@types/node` 26",
+          "TypeScript pinned to **6.0** rather than 7.0. `typescript-eslint` only supports `<6.1`, because TS 7 ships no programmatic API yet",
+          "`eslint-plugin-react-hooks` is now registered in `eslint.config.js` (`rules-of-hooks`, `exhaustive-deps`). It was already installed, but the plugin was never loaded, so the existing `eslint-disable` comments for it failed under ESLint 10",
+          "Fixed new clippy lints from Rust 1.97 (`unnecessary_sort_by`, `manual_checked_ops`) and empty `catch` blocks flagged by ESLint 10",
+        ],
+      },
+    ],
+    assets: [
+      {
+        os: "macOS",
+        arch: "Universal (Apple Silicon + Intel)",
+        filename: "OrionPod_0.5.1_universal.dmg",
+        url: "https://github.com/anistark/orionpod-web/releases/download/v0.5.1/OrionPod_0.5.1_universal.dmg",
+        size: "~32 MB",
+      },
+    ],
+  },
+  {
     version: "0.5.0-beta",
     codename: "Futaba",
     date: "2026-07-06",
-    latest: true,
+    latest: false,
     stable: false,
     deprecated: false,
     notes: "Conversations that persist and export, beta agent tools, and correct prompt formatting beyond ChatML.",
