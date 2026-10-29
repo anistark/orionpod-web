@@ -13,12 +13,52 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
       });
     },
-    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+    // threshold 0, not a fraction: an element taller than the viewport
+    // (like a long changelog card) could otherwise never reach it and stay hidden
+    { threshold: 0, rootMargin: "0px 0px -40px 0px" },
   );
 
   document
     .querySelectorAll(".fade-in, .fade-in-left, .fade-in-right")
     .forEach((el) => observer.observe(el));
+
+  // Download page: OS tabs show only that platform's assets
+  const osTabs = document.querySelectorAll(".os-tab");
+  if (osTabs.length) {
+    const osNames = { macos: "macOS", windows: "Windows", linux: "Linux" };
+
+    const selectOs = (os) => {
+      osTabs.forEach((tab) => {
+        const active = tab.dataset.os === os;
+        tab.classList.toggle("active", active);
+        tab.setAttribute("aria-pressed", active);
+      });
+      document.querySelectorAll(".release-assets").forEach((list) => {
+        let shown = 0;
+        list.querySelectorAll("[data-platform]").forEach((row) => {
+          const match = row.dataset.platform === os;
+          row.style.display = match ? "" : "none";
+          if (match) shown++;
+        });
+        const empty = list.querySelector(".asset-empty");
+        empty.textContent = `No ${osNames[os]} build in this release.`;
+        empty.style.display = shown ? "none" : "";
+      });
+      document.querySelectorAll("[data-os-only]").forEach((el) => {
+        el.style.display = el.dataset.osOnly === os ? "" : "none";
+      });
+    };
+
+    osTabs.forEach((tab) =>
+      tab.addEventListener("click", () => selectOs(tab.dataset.os)),
+    );
+
+    // Start on the visitor's OS
+    const ua = navigator.userAgent;
+    if (/Windows/.test(ua)) selectOs("windows");
+    else if (/Linux/.test(ua) && !/Android/.test(ua)) selectOs("linux");
+    else selectOs("macos");
+  }
 
   // Video demo mute/unmute
   const muteBtn = document.getElementById("video-mute-toggle");

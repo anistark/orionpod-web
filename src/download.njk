@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Download — OrionPod
-description: Download the latest version of OrionPod for macOS. Run AI models locally with GPU acceleration.
+description: Download the latest version of OrionPod for macOS, Windows and Linux. Run AI models locally with GPU acceleration.
 ---
 
 {% include "nav.njk" %}
@@ -9,7 +9,7 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
 <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-16 xl:px-28 2xl:px-40 overflow-x-hidden">
   <div class="w-full max-w-4xl mx-auto">
     <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 fade-in">Download OrionPod</h1>
-    <p class="text-gray-500 text-center mb-6 fade-in stagger-1">Currently available for macOS</p>
+    <p class="text-gray-500 text-center mb-6 fade-in stagger-1">Available for macOS, Windows and Linux</p>
 
     {# OS tabs #}
     <div class="flex flex-wrap justify-center gap-3 mb-16 fade-in stagger-2">
@@ -17,15 +17,13 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
         <iconify-icon icon="simple-icons:apple" width="18"></iconify-icon>
         macOS
       </button>
-      <button class="os-tab inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all opacity-40 cursor-not-allowed" data-os="windows" disabled>
+      <button class="os-tab inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all" data-os="windows">
         <iconify-icon icon="simple-icons:windows" width="16"></iconify-icon>
         Windows
-        <span class="text-[0.6rem] uppercase tracking-wider opacity-70 hidden sm:inline">Soon</span>
       </button>
-      <button class="os-tab inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all opacity-40 cursor-not-allowed" data-os="linux" disabled>
+      <button class="os-tab inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all" data-os="linux">
         <iconify-icon icon="simple-icons:linux" width="16"></iconify-icon>
         Linux
-        <span class="text-[0.6rem] uppercase tracking-wider opacity-70 hidden sm:inline">Soon</span>
       </button>
     </div>
 
@@ -60,16 +58,17 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
 
           {# Assets #}
           <div class="border-t border-white/5 px-6 md:px-8 py-5">
-            <div class="space-y-3">
+            <div class="release-assets flex flex-col gap-3">
               {%- for asset in release.assets -%}
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+                {%- set platform = asset.platform or "macos" -%}
+                <div data-platform="{{ platform }}" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
                   <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                      <iconify-icon icon="simple-icons:apple" width="20" class="text-gray-300"></iconify-icon>
+                      <iconify-icon icon="simple-icons:{{ 'apple' if platform == 'macos' else platform }}" width="20" class="text-gray-300"></iconify-icon>
                     </div>
                     <div>
                       <p class="text-sm font-medium text-white">{{ asset.os }}</p>
-                      <p class="text-xs text-gray-500">{{ asset.arch }}{% if asset.size %} · {{ asset.size }}{% endif %}</p>
+                      <p class="text-xs text-gray-500">{{ asset.arch }}{% if asset.format %} · {{ asset.format }}{% endif %}{% if asset.size %} · {{ asset.size }}{% endif %}</p>
                     </div>
                   </div>
                   <a href="{{ asset.url }}"
@@ -80,6 +79,7 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
                   </a>
                 </div>
               {%- endfor -%}
+              <p class="asset-empty text-sm text-gray-500" style="display: none"></p>
             </div>
           </div>
 
@@ -139,8 +139,8 @@ description: Download the latest version of OrionPod for macOS. Run AI models lo
       {%- endfor -%}
     </div>
 
-    {# System requirements #}
-    <div class="glass rounded-2xl p-6 md:p-8 mt-12 fade-in">
+    {# System requirements (macOS only for now) #}
+    <div data-os-only="macos" class="glass rounded-2xl p-6 md:p-8 mt-12 fade-in">
       <h3 class="text-lg font-semibold mb-5">System Requirements</h3>
       <ul class="space-y-3 text-gray-400 text-sm">
         <li class="flex items-center gap-3">
