@@ -19,6 +19,16 @@
   --color-surface-alt: #12121a;
 }
 
+/* Tailwind v4 resets buttons to the default cursor, so restore the pointer on everything clickable */
+@layer base {
+  a[href],
+  button:not(:disabled),
+  [role="button"],
+  summary {
+    cursor: pointer;
+  }
+}
+
 @utility glass {
   background: var(--color-glass);
   border: 1px solid var(--color-glass-border);
